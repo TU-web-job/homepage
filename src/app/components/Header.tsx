@@ -7,7 +7,7 @@ export default function Header(){
     return (
         <div className="flex justify-between items-center w-full px-8">
                 <div>
-                    <Link href="/" className="text-6xl font-bold hover:border-b-2 hover:text-gray-300">FBS</Link>
+                    <Link href="/" className="text-6xl font-bold hover:border-b-2 hover:text-gray-300 text-red-400"><span className="text-green-500">O</span><span className="text-blue-500">F</span><span className="text-red-500">S</span></Link>
                 </div>
                 <div className="hidden md:flex">
                     <ul className="flex gap-4">

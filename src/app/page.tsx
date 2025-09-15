@@ -6,7 +6,7 @@ export default function Home() {
             style={{ backgroundImage: 'url(/images/studium.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
             <Header />
             <div className="flex flex-col text-white justify-center items-center">
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold font-bold drop-shadow-lg">FootBall School</h1>
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold font-bold drop-shadow-lg"><span className="text-green-500">O</span>noda <span className="text-blue-500">F</span>ussball <span className="text-red-500">S</span>chool</h1>
               <p className="text-xg sm:text-xl md:text-3xl font-semibold mt-2 text-center drop-shadow-md">Growing With Us!</p>
             </div>
             <Footer />
