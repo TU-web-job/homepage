@@ -1,3 +1,4 @@
+"use client"
 import { GiSoccerKick } from "react-icons/gi";
 import dynamic from "next/dynamic";
 
