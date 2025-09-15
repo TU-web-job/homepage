@@ -18,9 +18,9 @@ export default function Header(){
                 </div>
                 <button className="md:hidden flex flex-col gap-1 focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}>
-                    <span className="w-6 h-0.5 text-white"></span>
-                    <span className="w-6 h-0.5 text-white"></span>
-                    <span className="w-6 h-0.5 text-white"></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
+                    <span className="w-6 h-0.5 bg-white"></span>
                 </button>
                 {isOpen && (
                     <div className="absolute top-16 right-4 rounded-lg p-4 flex flex-col gap-4 md:hidden">
