@@ -5,10 +5,10 @@ export default function Footer(){
     return(
         <footer>
             <ul className="flex gap-4 p-4 items-end justify-end">
-                <li><Link href="/" className="text-red-400"><FaInstagram />Instagram</Link></li>
-                <li><Link href="/" className="text-blue-600"><FaTwitter />X(Twitter)</Link></li>
-                <li><Link href="/" className="text-black"><FaTiktok />TikTok</Link></li>
-                <li><Link href="/" className="text-red-500"><FaYoutube />YouTube</Link></li>
+                <li><Link href="/" className="flex items-center gap-2 text-red-400"><FaInstagram />Instagram</Link></li>
+                <li><Link href="/" className="flex items-center gap-2 text-blue-600"><FaTwitter />X(Twitter)</Link></li>
+                <li><Link href="/" className="flex items-center gap-2 text-black"><FaTiktok />TikTok</Link></li>
+                <li><Link href="/" className="flex items-center gap-2 text-red-500"><FaYoutube />YouTube</Link></li>
             </ul>
         </footer>
     );
