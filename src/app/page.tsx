@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
               <h1 className="text-xl sm:text-2xl md:text-4xl font-bold font-bold drop-shadow-lg">FootBall School</h1>
               <p className="text-xg sm:text-xl md:text-3xl font-semibold mt-2 text-center drop-shadow-md">Growing With Us!</p>
             </div>
+            <Footer />
     </div>
   );
 }
