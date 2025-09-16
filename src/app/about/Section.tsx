@@ -58,7 +58,7 @@ export default function Section(){
                             </thead>
                             <tbody>
                             <tr className="border-1 border-gray-200 justify-center items-center">
-                                <td>1.2年生</td>
+                                <td className="p-2">1.2年生</td>
                                 <td>⚪︎</td>
                                 <td>-</td>
                                 <td>-</td>
@@ -68,7 +68,7 @@ export default function Section(){
                                 <td>-</td>
                             </tr>
                             <tr className="border-1 border-gray-200 justify-center items-center">
-                                <td>3.4年生</td>
+                                <td className="p-2">3.4年生</td>
                                 <td>-</td>
                                 <td>⚪︎</td>
                                 <td>⚪︎</td>
@@ -78,7 +78,7 @@ export default function Section(){
                                 <td>-</td>
                             </tr>
                             <tr className="border-1 border-gray-200 justify-center items-center">
-                                <td>5.6年生</td>
+                                <td className="p-2">5.6年生</td>
                                 <td>⚪︎</td>
                                 <td>⚪︎</td>
                                 <td>-</td>
@@ -105,7 +105,7 @@ export default function Section(){
                             </thead>
                             <tbody className="items-center justify-center">
                             <tr className="border-1 border-gray-200">
-                                <td>1.2年生</td>
+                                <td className="p-2">1.2年生</td>
                                 <td>⚪︎</td>
                                 <td>-</td>
                                 <td>⚪︎</td>
@@ -115,7 +115,7 @@ export default function Section(){
                                 <td>-</td>
                             </tr>
                             <tr className="border-1 border-gray-200">
-                                <td>3.4年生</td>
+                                <td className="p-2">3.4年生</td>
                                 <td>⚪︎</td>
                                 <td>⚪︎</td>
                                 <td>-</td>
@@ -125,7 +125,7 @@ export default function Section(){
                                 <td>-</td>
                             </tr>
                             <tr className="border-1 border-gray-200">
-                                <td>5.6年生</td>
+                                <td className="p-2">5.6年生</td>
                                 <td>-</td>
                                 <td>⚪︎</td>
                                 <td>⚪︎</td>
@@ -140,11 +140,11 @@ export default function Section(){
                 <div className="w-[50%] p-2">
                     <h3 className="border-b-2 border-gray-200 font-semibold mb-2">開催日</h3>
                     <p>レギュラーシーズン</p>
-                    <p>曜日 : </p>
-                    <p>時間 : </p>
+                    <p>曜日 : 土日以外 ※学年により異なります。</p>
+                    <p>時間 : 17:00 ~ 21:00</p>
                     <p>バケーションシーズン(春、夏、冬)</p>
-                    <p>曜日 : </p>
-                    <p>時間 : </p>
+                    <p>曜日 : 左記は参考になります。不定期で増減あり</p>
+                    <p>時間 : 10:00 ~ 12:00、15:00 ~ 19:00</p>
                 </div>
             </div>
             <div className="flex flex-row mt-4 border-2 border-gray-400 p-4 w-full">
