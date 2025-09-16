@@ -1,6 +1,8 @@
 "use client"
 import { GiSoccerKick } from "react-icons/gi";
-import Access from "@/app/about/Access";
+import dynamic from "next/dynamic";
+
+const Access = dynamic(() => import("@/app/about/Access"), {ssr: false });
 
 export default function Section(){
     return(
