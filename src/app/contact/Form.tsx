@@ -1,6 +1,9 @@
 "use client"
 
 import { useForm } from "react-hook-form";
+import { db } from "../../../lib/firebase"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import emailjs from "@emailjs/browser"; 
 
 type FormData = {
     name: string,
@@ -10,10 +13,46 @@ type FormData = {
 
 export default function Form() {
 
-    const { register, handleSubmit, formState: { errors }} = useForm<FormData>();
-    const onSubmit = (data : FormData) => {
-        console.log(data);
-    }
+    const { register, handleSubmit, formState: { errors },reset,} = useForm<FormData>();
+    const onSubmit = async (data : FormData) => {
+       try{
+        await addDoc(collection(db, "contacts"), {
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            createAt: serverTimestamp(),
+        });
+
+        await emailjs.send(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_USER!,
+            {
+                name: data.name,
+                email: data.email,
+                message: data.message,
+            },
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
+
+        await emailjs.send(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ADMIN!,
+            {
+                name: data.name,
+                email: data.email,
+                message: data.message,
+            },
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
+
+        alert("Success!!");
+        reset();
+
+       }catch(error){
+        console.error(error);
+        alert("送信できませんでした。");
+       }
+    };
     return(
         <div className="flex flex-col min-h-screen items-center p-4 bg-gray-50">
             <h1 className="font-bold text-2xl mb-4">お問い合わせフォーム</h1>

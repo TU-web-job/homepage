@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-google-maps/api": "^2.20.7",
     "emailjs-com": "^3.2.0",
     "firebase": "^12.2.1",
