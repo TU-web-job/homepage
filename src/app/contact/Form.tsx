@@ -15,12 +15,13 @@ export default function Form() {
 
     const { register, handleSubmit, formState: { errors },reset,} = useForm<FormData>();
     const onSubmit = async (data : FormData) => {
+        console.log("check", data);
        try{
         await addDoc(collection(db, "contacts"), {
-            name: data.name,
-            email: data.email,
-            message: data.message,
-            createAt: serverTimestamp(),
+            name: data.name || "",
+            email: data.email || "",
+            message: data.message || "",
+            createdAt: serverTimestamp(),
         });
 
         await emailjs.send(
@@ -66,7 +67,7 @@ export default function Form() {
                     <label className="mb-2 text-semibold md:mb-0 w-32 font-midium">E-Mail</label>
                     <input {...register("email", {
                         required: "メールアドレスは必須項目です。",
-                        pattern: {value: /^[^@ ]+@[^@ ]+\.[^@ .]{2, }$/, message: "メールアドレスの形式で入力してください。"}
+                        pattern: {value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, message: "メールアドレスの形式で入力してください。"}
                     })} className="w-[70%] border border-gray-300 p-2 rounded" placeholder="xxxx@xxco.jp"/>
                 </div>
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -75,7 +76,7 @@ export default function Form() {
                     <textarea {...register("message", {required: "問い合わせ内容を入力してください。"})} className="w-[70%] border border-gray-300 p-2 rounded"></textarea> 
                 </div>
                 {errors.message && <p className="text-red-500">{errors.message.message}</p>}
-                <button type="submit" className="bg-blue-600 p-2 rounded-md text-white shadow-md">送信</button>
+                <button  type="submit" className="bg-blue-600 p-2 rounded-md text-white shadow-md">送信</button>
             </form>
         </div>
     );
