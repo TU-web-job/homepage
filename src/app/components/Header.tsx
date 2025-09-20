@@ -14,10 +14,12 @@ export default function Header(){
                         <li><Link href="/" className="border-b-2 border-transparent transition-colors hover:border-blue-500 active:border-gray-500 text-gray-500 hover:text-blue-500 active:text-gray-500 cursor-pointer">Top Page</Link></li>
                         <li><Link href="/about" className="border-b-2 border-transparent transition-colors hover:border-blue-500 active:border-gray-500 text-gray-500 hover:text-blue-500 active:text-gray-500 cursor-pointer">About</Link></li>
                         <li><Link href="/contact" className="border-b-2 border-transparent transition-colors hover:border-blue-500 active:border-gray-500 text-gray-500 hover:text-blue-500 active:text-gray-500 cursor-pointer">Contact</Link></li>
+                        <li><Link href="/trial" className="border-b-2 border-transparent transition-colors hover:border-blue-500 active:border-gray-500 text-gray-500 hover:text-blue-500 active:text-gray-500 cursor-pointer">Trial</Link></li>
                     </ul>
                 </div>
                 <button className="md:hidden flex flex-col gap-1 focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}>
+                    <span className="w-6 h-0.5 bg-gray-300"></span>
                     <span className="w-6 h-0.5 bg-gray-300"></span>
                     <span className="w-6 h-0.5 bg-gray-300"></span>
                     <span className="w-6 h-0.5 bg-gray-300"></span>
@@ -27,6 +29,7 @@ export default function Header(){
                         <Link href="/" onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-blue-400">Top Page</Link>
                         <Link href="/about" onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-blue-400">About</Link>
                         <Link href="/contact" onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-blue-400">Contact</Link>
+                        <Link href="/trial" onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-blue-400">Trial</Link>
                     </div>
                 )}
         </div>
