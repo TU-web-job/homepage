@@ -9,6 +9,7 @@ type FormData = {
     name: string,
     email: string,
     message: string;
+    flg: number;
 };
 
 export default function Form() {
@@ -22,6 +23,7 @@ export default function Form() {
             email: data.email || "",
             message: data.message || "",
             createdAt: serverTimestamp(),
+            flg:0,
         });
 
         await emailjs.send(
