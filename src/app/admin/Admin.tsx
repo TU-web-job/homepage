@@ -4,27 +4,48 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
 
+type Contact = {
+    id: string,
+    name: string,
+    email: string,
+    message: string,
+    flg: number,
+};
+
+type Trial = {
+    id: string,
+    trialName: string,
+    parentName: string,
+    grade: string,
+    trialDate: string,
+    mail: string,
+    message: string,
+    trialFlg: number,
+    checkFlg: number,
+};
+
+
 export default function Admin(){
-    const [contacts, setContacts] = useState<any[]>([]);
-    const [trial, setTrial] = useState<any[]>([]);
+    const [contacts, setContacts] = useState<Contact[]>([]);
+    const [trial, setTrial] = useState<Trial[]>([]);
     const [loading, setLoading] = useState(true);
     const [ view, setView ] = useState<"contacts" | "trial" | null>(null);
 
     useEffect(() => {
         const loadData = async () => {
             const querySnapshot = await getDocs(collection(db, "contacts"));
-            const data = querySnapshot.docs.map(doc => ({
+            const data:Contact[] = querySnapshot.docs.map(doc => ({
                 id: doc.id,
-                ...doc.data(),
+                ...(doc.data() as Omit<Contact, "id">),
             }));
             setContacts(data);
         };
 
         const trialData = async () => {
             const querySnapshot = await getDocs(collection(db,"trial"));
-            const data = querySnapshot.docs.map(doc => ({
+            const data:Trial[] = querySnapshot.docs.map(doc => ({
                 id: doc.id,
-                ...doc.data(),
+                ...(doc.data() as Omit<Trial, "id">),
             }));
             setTrial(data);
         };

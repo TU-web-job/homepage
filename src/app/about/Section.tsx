@@ -1,5 +1,6 @@
 "use client"
 import { GiSoccerKick } from "react-icons/gi";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const Access = dynamic(() => import("@/app/about/Access"), {ssr: false });
@@ -15,12 +16,12 @@ export default function Section(){
                     <p>小学生からサッカーをやり始め、今までの経験を未来ある子供達に伝えたくコーチなりました。</p>
                 </div>
                 <div className="w-[50%] p-2">
-                    <img src="/images/child.jpg" alt="自己紹介" />
+                    <Image src="/images/child.jpg" alt="自己紹介" />
                 </div>
             </div>
             <div className="flex flex-row mt-4 border-2 border-gray-400 p-4 w-full">
                 <div className="w-[50%] p-2">
-                    <img src="/images/parent.jpg" alt="学校" />
+                    <Image src="/images/parent.jpg" alt="学校" />
                 </div>
                 <div className="w-[50%] p-2">
                     <h3 className="border-b-2 border-gray-200 font-semibold mb-2">経歴</h3>
@@ -37,7 +38,7 @@ export default function Section(){
                     <p>基礎的なボールコントール、個々のスキルアップ、一対一のスキル以上をどこで使用するかの判断力を選手が考えて身につけていけるようにしていきます！</p>
                 </div>
                 <div className="w-[50%] p-2">
-                    <img src="/images/1on1.jpg" alt="サッカー" />
+                    <Image src="/images/1on1.jpg" alt="サッカー" />
                 </div>
             </div>
             <div className="flex flex-row mt-4 border-2 border-gray-400 p-4 w-full">
