@@ -118,16 +118,16 @@ export default function Admin(){
                 <label className="p-2 m-2"><input type="radio" name="list" onClick={() => setView("trial")} />Trial List</label>
             </section>
             {view === "contacts" && (
-                <div className="w-full border border-gray-800 bg-gray-300 p-2 mb-4">
+                <div className="w-full border border-gray-800 bg-gray-300 p-2 mb-4 rounded">
                     <h3 className="border-b-1 border-white font-semibold text-xl p-2 mb-4">お問い合わせ一覧</h3>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                         {contacts.map(contact => (
                             <div key={contact.id} className="flex flex-col border rounded-lg shadow-md bg-white p-2 mb-4">
                                 <p><span className="font-semibold">Name : </span>{contact.name}</p>
                                 <p><span className="font-semibold">E-Mail : </span>{contact.email}</p>
                                 <p><span className="font-semibold">Message : </span>{contact.message}</p>
                                 {contact.flg === 0 && (
-                                    <button className="border bg-gray-300 text-white rounded mt-2" onClick={() => handleConfirm(contact.id)}>確認</button>
+                                    <button className="border bg-gray-700 text-white rounded mt-2" onClick={() => handleConfirm(contact.id)}>確認</button>
                                 )}
                                 {contact.flg === 1 && (
                                     <p className="text-green-600 font-semibold mt-2">✅確認済</p>
@@ -138,10 +138,11 @@ export default function Admin(){
                 </div>
             )}
             {view === "trial" && (
-                <div className="w-full bg-gray-300 border border-blue-300 p-2 mb-4">
+                <div className="w-full bg-gray-300 border border-blue-300 p-2 mb-4 rounded">
                 <h3 className="font-semibold text-xl p-2 mb-4">体験者一覧</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2">
                 {trial.map((item) => (
-                    <div key={item.id} className="flex flex-col p-2 mb-4 border-b-2 border-white">
+                    <div key={item.id} className="flex flex-col p-2 m-2 border bg-white rounded">
                         <p><span className="font-semibold">体験者名 : </span>{item.trialName}</p>
                         <p><span className="font-semibold">保護者名 : </span>{item.parentName}</p>
                         <p><span className="font-semibold">学年 : </span>{item.grade}</p>
@@ -150,16 +151,16 @@ export default function Admin(){
                         <p><span className="font-semibold">備考 : </span>{item.message}</p>
                         <p className="font-semibold">申込 : 
                         {item.checkFlg === 0 && (
-                            <button className="border-white bg-yellow-200 p-2 rounded font-light" onClick={() => checkConfirm(item.id)}>承認</button>
+                            <button className="text-white bg-yellow-500 p-2 m-2 rounded font-light" onClick={() => checkConfirm(item.id)}>承認</button>
                         )}
                         {item.checkFlg === 1 && (
-                            <span className="font-light">✅承認済</span>
+                            <span className="font-light p-2 m-2">✅承認済</span>
                         )}
                         </p>
                         <p className="font-semibold">体験 : 
                             {item.trialFlg === 0 && (
                                 <span>
-                                <button onClick={() => trialConfirm(item.id)} className="bg-blue-200 p-2 rounded font-light m-2">参加</button>
+                                <button onClick={() => trialConfirm(item.id)} className="bg-blue-500 p-2 rounded font-light m-2">参加</button>
                                 <button onClick={() => canselConfirm(item.id)} className="bg-red-500 text-white p-2 font-light rounded m-2">不参加</button>
                                 </span>
                             )}
@@ -172,6 +173,7 @@ export default function Admin(){
                         </p>
                     </div>
                 ))}
+                </div>
             </div>
             )}
         </div>

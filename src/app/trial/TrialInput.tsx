@@ -17,7 +17,7 @@ const gradeType = [
     "小学生未満","低学年","中学年", "高学年"
 ];
 
-export default function TrailInput(){
+export default function TrialInput(){
     const {register, handleSubmit, formState: { errors }, reset, } = useForm<trialData>();
     const onSubmit = async (data : trialData) => {
         console.log("check", data);
@@ -29,6 +29,8 @@ export default function TrailInput(){
             trialDate: data.trialDate || "",
             mail: data.mail || "",
             message: data.message || "",
+            trialFlg: 0,
+            checkFlg: 0,
             createdAt: serverTimestamp(),
             });
 
