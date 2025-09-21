@@ -80,6 +80,20 @@ export default function Admin(){
         }
     };
 
+    const canselConfirm = async (id:string) => {
+        try{
+            const ref = doc(db, "trial", id);
+            await updateDoc(ref, {trialFlg : 2});
+
+            setTrial((prev) => 
+            prev.map((c) => 
+            c.id === id ? {...c, trialFlg : 2} : c));
+        }catch(error){
+            console.error("trialCheck", error);
+            alert("更新できませんでした。");
+        }
+    };
+
     const checkConfirm = async (id:string) => {
         try{
             const ref = doc(db, "trial", id);
@@ -144,10 +158,16 @@ export default function Admin(){
                         </p>
                         <p className="font-semibold">体験 : 
                             {item.trialFlg === 0 && (
-                                <button onClick={() => trialConfirm(item.id)} className="bg-blue-200 p-2 rounded font-light">未参加</button>
+                                <span>
+                                <button onClick={() => trialConfirm(item.id)} className="bg-blue-200 p-2 rounded font-light m-2">参加</button>
+                                <button onClick={() => canselConfirm(item.id)} className="bg-red-500 text-white p-2 font-light rounded m-2">不参加</button>
+                                </span>
                             )}
                             {item.trialFlg === 1 && (
                                 <span className="font-light">✅参加済</span>
+                            )}
+                            {item.trialFlg === 2 && (
+                                <span className="text-red-500 font-light">❎辞退</span>
                             )}
                         </p>
                     </div>
