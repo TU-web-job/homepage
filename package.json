@@ -11,8 +11,10 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@react-google-maps/api": "^2.20.7",
+    "axios": "^1.12.2",
     "emailjs-com": "^3.2.0",
     "firebase": "^12.2.1",
+    "jp-prefecture": "^0.2.1",
     "leaflet": "^1.9.4",
     "next": "15.5.3",
     "react": "19.1.0",

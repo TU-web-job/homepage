@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import TrialInput from "./TrialInput";
 
 
-export default function trail(){
+
+export default function trial(){
     return(
         <>
         <Header />
